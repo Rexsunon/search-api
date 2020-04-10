@@ -3,6 +3,12 @@ import { type } from "os";
 
 type Wrapper = (router: Router) => void;
 
+/**
+ * Middleware wrapper
+ *
+ * @param middlewareWrappers Array of middleware
+ * @param router Express router
+ */
 export const applyMiddleware = (
   middlewareWrappers: Wrapper[],
   router: Router
@@ -20,6 +26,12 @@ type Handler = (
 
 type Route = { path: string; method: string; handler: Handler | Handler[] };
 
+/**
+ * Apply routes
+ *
+ * @param routes Array of routes
+ * @param router Express router
+ */
 export const applyRoutes = (routes: Route[], router: Router) => {
   for (const route of routes) {
     const { path, method, handler } = route;

@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 
+// Search routes
 export default [
   {
     path: "/",
