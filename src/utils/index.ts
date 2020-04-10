@@ -20,7 +20,7 @@ type Handler = (
 
 type Route = { path: string; method: string; handler: Handler | Handler[] };
 
-export const applyRoute = (routes: Route[], router: Router) => {
+export const applyRoutes = (routes: Route[], router: Router) => {
   for (const route of routes) {
     const { path, method, handler } = route;
     (router as any)[method](path, handler);
