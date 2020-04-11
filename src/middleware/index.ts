@@ -3,5 +3,11 @@ import {
   bodyRequestParserHandler,
   compressionHandler,
 } from "./common";
+import { handleApiDocs } from "./apiDocs";
 
-export default [corsHandler, bodyRequestParserHandler, compressionHandler];
+export default [
+  corsHandler,
+  bodyRequestParserHandler,
+  compressionHandler,
+  handleApiDocs,
+];
