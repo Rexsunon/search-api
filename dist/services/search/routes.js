@@ -10,14 +10,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const SearchController_1 = require("./SearchController");
+const checks_1 = require("../../middleware/checks");
 // Search routes
 exports.default = [
     {
         path: "/api/v1/search",
         method: "GET",
         handler: [
+            checks_1.checkSearchParams,
             ({ query }, res) => __awaiter(void 0, void 0, void 0, function* () {
-                const result = yield SearchController_1.getPlacesByName(query.q);
+                const result = yield SearchController_1.getPlacesByName(query.q.toString());
                 res.status(200).send(result);
             }),
         ],
