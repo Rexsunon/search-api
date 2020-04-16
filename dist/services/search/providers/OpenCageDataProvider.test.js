@@ -24,13 +24,13 @@ const Provider = __importStar(require("./OpenCageDataProvider"));
 jest.mock("request-promise");
 describe("OpenCageDataProvider", () => {
     test("an empty quesry string", () => __awaiter(void 0, void 0, void 0, function* () {
-        request_promise_1.default.mockImplementaion(() => '{"features":[]}');
+        request_promise_1.default.mockImplementation(() => '{"features":[]}');
         const result = yield Provider.getPlaces("Paris");
         expect(result).toEqual({ features: [] });
     }));
 });
 test("an invalid non-json response", () => __awaiter(void 0, void 0, void 0, function* () {
-    request_promise_1.default.mockImplementaion(() => "Service Unavailable");
+    request_promise_1.default.mockImplementation(() => "Service Unavailable");
     yield expect(Provider.getPlaces("")).rejects.toThrow(SyntaxError);
 }));
 //# sourceMappingURL=OpenCageDataProvider.test.js.map

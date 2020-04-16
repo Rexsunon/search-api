@@ -6,7 +6,7 @@ import { checkSearchParams } from "../../middleware/checks";
 export default [
   {
     path: "/api/v1/search",
-    method: "GET",
+    method: "get",
     handler: [
       checkSearchParams,
       async ({ query }: Request, res: Response) => {

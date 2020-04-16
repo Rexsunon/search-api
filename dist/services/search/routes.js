@@ -15,7 +15,7 @@ const checks_1 = require("../../middleware/checks");
 exports.default = [
     {
         path: "/api/v1/search",
-        method: "GET",
+        method: "get",
         handler: [
             checks_1.checkSearchParams,
             ({ query }, res) => __awaiter(void 0, void 0, void 0, function* () {
